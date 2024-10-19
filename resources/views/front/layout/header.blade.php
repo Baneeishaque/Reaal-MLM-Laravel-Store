@@ -24,6 +24,12 @@ $sections = \App\Models\Section::sections();
                         E-mail: info@multi-vendore-commerce.com
                         </a>
                     </li>
+					<li>
+                        <a href="http://ec2-54-162-109-50.compute-1.amazonaws.com:8000">
+                        <i class="fas fa-wallet u-c-brand u-s-m-r-9"></i>
+                        MLM Site
+                        </a>
+                    </li>
                 </ul>
             </nav>
             <nav>
