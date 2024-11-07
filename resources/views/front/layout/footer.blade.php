@@ -143,7 +143,7 @@
                 </ul>
             </div>
             <p class="copyright-text">Copyright &copy; 2022
-                <a target="_blank" rel="nofollow" href="#">REAAL E-commerce Platform</a> | All Right Reserved
+                <a target="_blank" rel="nofollow" href="#">REAAL E-Commerce Platform</a> | All Right Reserved
             </p>
         </div>
     </div>
