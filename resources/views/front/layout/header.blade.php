@@ -14,20 +14,20 @@ $sections = \App\Models\Section::sections();
             <nav>
                 <ul class="primary-nav g-nav">
                     <li>
-                        <a href="tel:+201255845857">
+                        <a href="tel:+918547412147">
                         <i class="fas fa-phone u-c-brand u-s-m-r-9"></i>
-                        Telephone: +201255845857</a>
+                        Telephone: +918547412147</a>
                     </li>
                     <li>
-                        <a href="mailto:info@multi-vendore-commerce.com">
+                        <a href="mailto:Reaal2007@gmail.com">
                         <i class="fas fa-envelope u-c-brand u-s-m-r-9"></i>
-                        E-mail: info@multi-vendore-commerce.com
+                        E-mail: Reaal2007@gmail.com
                         </a>
                     </li>
 					<li>
-                        <a href="http://ec2-54-162-109-50.compute-1.amazonaws.com:8000">
+                        <a href="https://helping-advanced-ghost.ngrok-free.app">
                         <i class="fas fa-wallet u-c-brand u-s-m-r-9"></i>
-                        MLM Site
+                        REAAL Site
                         </a>
                     </li>
                 </ul>
@@ -105,15 +105,15 @@ $sections = \App\Models\Section::sections();
                         </ul>
                     </li>
                     <li>
-                        <a>EGP
+                        <a>INR
                         <i class="fas fa-chevron-down u-s-m-l-9"></i>
                         </a>
                         <ul class="g-dropdown" style="width:90px">
                             <li>
-                                <a href="#" class="u-c-brand">LE EGP</a>
+                                <a href="#" class="u-c-brand">INR</a>
                             </li>
                             <li>
-                                <a href="#">($) USD</a>
+                                <a href="#">USD</a>
                             </li>
                         </ul>
                     </li>
@@ -126,7 +126,7 @@ $sections = \App\Models\Section::sections();
                                 <a href="#" class="u-c-brand">ENG</a>
                             </li>
                             <li>
-                                <a href="#">ARB</a>
+                                <a href="#">HIN</a>
                             </li>
                         </ul>
                 </ul>
