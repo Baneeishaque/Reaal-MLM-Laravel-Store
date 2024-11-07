@@ -129,6 +129,7 @@ $sections = \App\Models\Section::sections();
                                 <a href="#">HIN</a>
                             </li>
                         </ul>
+					</li>
                 </ul>
             </nav>
         </div>
