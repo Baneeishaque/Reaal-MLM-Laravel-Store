@@ -1634,7 +1634,7 @@ CREATE TABLE `products` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 /*Data for the table `products` */
 
@@ -1645,10 +1645,11 @@ insert  into `products`(`id`,`section_id`,`category_id`,`brand_id`,`vendor_id`,`
 (4,1,6,3,0,1,'superadmin','Blue T-Shirt','BT01','Blue',2500,0,0,'58892.png',NULL,'100','Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',NULL,NULL,NULL,NULL,NULL,'half sleeve',NULL,'polyester',NULL,NULL,NULL,'No','Yes',1,'2022-09-27 00:14:39','2023-05-12 15:51:52'),
 (5,1,6,2,0,1,'superadmin','Green T-Shirt','GT01','Green',900,10,100,'79204.png',NULL,'100','Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',NULL,NULL,NULL,NULL,NULL,'half sleeve',NULL,'polyester',NULL,NULL,NULL,'Yes','No',1,'2022-09-27 00:16:39','2023-05-12 15:52:05'),
 (6,1,7,1,0,1,'superadmin','Black Shirt','BS01','Blue',2000,10,100,'20083.jpg',NULL,'','Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',NULL,NULL,NULL,NULL,NULL,'full sleeve',NULL,'polyester',NULL,NULL,NULL,'Yes','Yes',1,'2022-09-28 17:46:45','2022-11-01 03:26:02'),
-(7,2,4,7,0,1,'superadmin','Redmi Phone','RT001','Red',12000,0,0,NULL,NULL,NULL,NULL,'Android','5 to 5.4 in',NULL,NULL,NULL,NULL,'4 GB',NULL,NULL,NULL,NULL,'No','No',1,'2022-10-06 20:07:36','2024-11-08 00:39:44'),
+(7,2,4,7,0,1,'superadmin','Redmi Phone','RT001','Red',12000,0,0,'96866.jpg','34161857.mp4',NULL,NULL,'Android','5 to 5.4 in',NULL,NULL,NULL,NULL,'4 GB',NULL,NULL,NULL,NULL,'No','No',1,'2022-10-06 20:07:36','2024-11-08 01:10:50'),
 (8,1,6,2,1,2,'vendor','Blue T-Shirt','BT501','Blue',1600,0,0,'64835.jpg',NULL,'',NULL,NULL,NULL,NULL,NULL,NULL,'full sleeve',NULL,'cotton',NULL,NULL,NULL,'No','No',1,'2022-10-15 18:40:41','2024-10-30 06:32:56'),
 (9,1,6,3,9,7,'vendor','Black T-shirt','BT01','black',1200,10,200,'95056.jpg',NULL,'100',NULL,NULL,NULL,NULL,NULL,NULL,'half sleeve',NULL,'cotton',NULL,NULL,NULL,'No','No',1,'2023-03-04 02:42:45','2023-06-09 18:11:41'),
-(10,6,10,1,1,2,'vendor','Real Product','Reaal','Black',250,0,0,'14817.jpg','891847685.webm',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'No','No',1,'2024-11-08 00:49:23','2024-11-08 00:49:23');
+(10,6,10,1,1,2,'vendor','Real Product','Reaal','Black',250,0,0,'14817.jpg','891847685.webm',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'No','No',1,'2024-11-08 00:49:23','2024-11-08 00:49:23'),
+(11,6,10,9,1,2,'vendor','Reaal 2','Reaal2','Blue',500,20,100,'77953.jpg','2081808310.mp4','1','Reaal 2 Product',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'reaal2','reeal2','Reaal product 2','Yes','Yes',1,'2024-11-08 01:08:22','2024-11-08 01:08:22');
 
 /*Table structure for table `products_attributes` */
 
@@ -1794,7 +1795,7 @@ CREATE TABLE `recently_viewed_products` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=164 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=165 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 /*Data for the table `recently_viewed_products` */
 
@@ -1961,7 +1962,8 @@ insert  into `recently_viewed_products`(`id`,`product_id`,`session_id`,`created_
 (160,8,'51a2b2c9eee32243dd85c628e707fbd5',NULL,NULL),
 (161,7,'51a2b2c9eee32243dd85c628e707fbd5',NULL,NULL),
 (162,9,'51a2b2c9eee32243dd85c628e707fbd5',NULL,NULL),
-(163,10,'51a2b2c9eee32243dd85c628e707fbd5',NULL,NULL);
+(163,10,'51a2b2c9eee32243dd85c628e707fbd5',NULL,NULL),
+(164,11,'51a2b2c9eee32243dd85c628e707fbd5',NULL,NULL);
 
 /*Table structure for table `sections` */
 
