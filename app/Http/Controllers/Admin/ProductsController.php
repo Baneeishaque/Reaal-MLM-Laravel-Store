@@ -108,6 +108,7 @@ class ProductsController extends Controller
             // Laravel's Validation    // Customizing Laravel's Validation Error Messages: https://laravel.com/docs/9.x/validation#customizing-the-error-messages    // Customizing Validation Rules: https://laravel.com/docs/9.x/validation#custom-validation-rules
             $rules = [
                 'category_id'   => 'required',
+				'brand_id'		=> 'required',
                 'product_name'  => 'required', // only alphabetical characters and spaces
                 'product_code'  => 'required|regex:/^\w+$/', // alphanumeric regular expression
                 'product_price' => 'required|numeric',
@@ -116,6 +117,7 @@ class ProductsController extends Controller
 
             $customMessages = [ // Specifying A Custom Message For A Given Attribute: https://laravel.com/docs/9.x/validation#specifying-a-custom-message-for-a-given-attribute
                 'category_id.required'   => 'Category is required',
+				'brand_id.required'   => 'Brand is required',
                 'product_name.required'  => 'Product Name is required',
                 'product_name.regex'     => 'Valid Product Name is required',
                 'product_code.required'  => 'Product Code is required',
