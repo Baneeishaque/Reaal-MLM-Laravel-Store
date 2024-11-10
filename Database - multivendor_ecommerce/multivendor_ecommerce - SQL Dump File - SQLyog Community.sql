@@ -28,21 +28,26 @@ CREATE TABLE `admins` (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `admins_email_unique` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 /*Data for the table `admins` */
 
 insert  into `admins`(`id`,`name`,`type`,`vendor_id`,`mobile`,`email`,`password`,`image`,`confirm`,`status`,`created_at`,`updated_at`) values 
-(1,'SAIFUL','superadmin',0,'9744886111','admin@admin.com','$2a$12$xvkjSScUPRexfcJTAy9ATutIeGUuRgJrjDIdL/.xlrddEvRZINpeC','ahmed.jpg','No',1,NULL,'2024-10-26 09:46:34'),
+(1,'SAIFUL','superadmin',0,'9744886111','admin@admin.com','$2a$12$xvkjSScUPRexfcJTAy9ATutIeGUuRgJrjDIdL/.xlrddEvRZINpeC','ahmed.jpg','Yes',1,NULL,'2024-10-26 09:46:34'),
 (2,'Yasser Fouaad - Vendor','vendor',1,'01259598421','yasser@admin.com','$2a$12$xvkjSScUPRexfcJTAy9ATutIeGUuRgJrjDIdL/.xlrddEvRZINpeC','83157.jpg','Yes',1,NULL,'2023-01-02 15:40:56'),
-(3,'Samir Morsy','vendor',5,'01154572136','samir@yahoo.com','$2a$12$xvkjSScUPRexfcJTAy9ATutIeGUuRgJrjDIdL/.xlrddEvRZINpeC',NULL,'No',1,'2022-10-14 04:25:41','2022-10-16 03:25:37'),
+(3,'Samir Morsy','vendor',5,'01154572136','samir@yahoo.com','$2a$12$xvkjSScUPRexfcJTAy9ATutIeGUuRgJrjDIdL/.xlrddEvRZINpeC',NULL,'Yes',1,'2022-10-14 04:25:41','2022-10-16 03:25:37'),
 (4,'Ramy Saeed','vendor',6,'01098571935','ramy@admin.com','$2a$12$xvkjSScUPRexfcJTAy9ATutIeGUuRgJrjDIdL/.xlrddEvRZINpeC','','Yes',1,'2022-10-14 06:50:03','2024-10-25 01:18:55'),
 (6,'Safaa Masoud','vendor',8,'01255374956','safaa@vendor.com','$2a$12$xvkjSScUPRexfcJTAy9ATutIeGUuRgJrjDIdL/.xlrddEvRZINpeC',NULL,'Yes',1,'2022-10-15 00:16:53','2024-10-25 01:18:54'),
 (7,'Ghali Shennway','vendor',9,'01154557789','ghali@yahoo.com','$2a$12$xvkjSScUPRexfcJTAy9ATutIeGUuRgJrjDIdL/.xlrddEvRZINpeC',NULL,'Yes',1,'2022-10-15 00:18:28','2024-10-25 01:18:53'),
-(8,'Banee Store','vendor',10,'9446827218','baneeishaque@gmail.com','$2y$10$2ZRdYX0zn6QyDYGCiciZdeWxSWNpHO4DOx4jPrIUSynaSTpeK4Xxm',NULL,'No',1,'2024-10-24 20:09:57','2024-10-24 17:10:38'),
-(9,'Reaal','vendor',11,'9744886111','reaal2007@gmail.com','$2y$10$2IV5vtkjLTmJf1hxzZPDG.pfjIJmHO1z/hTldny40ztKfRDt.yCi.',NULL,'No',1,'2024-10-24 20:13:44','2024-10-28 11:50:47'),
-(10,'Binyamin','vendor',12,'8111948874','www.reaalnn1@gmail.com','$2y$10$lhpI6VcmtHvEcP52MfKo7ui9oQnKHGBqUucVxNlMQtkRc2Dw30s/m',NULL,'No',1,'2024-10-29 11:23:22','2024-11-07 09:15:50'),
-(11,'mdayurmanthra@gmail.com','vendor',13,'9072995522','mdayurmanthra@gmail.com','$2y$10$Z6k4a6vO5PEpT3bio7mIHu5cZeR8YdnO9SfA4vPvHVtMdUhnHVEai',NULL,'No',1,'2024-11-01 12:15:38','2024-11-07 09:15:48');
+(8,'Banee Store','vendor',10,'9446827218','baneeishaque@gmail.com','$2y$10$2ZRdYX0zn6QyDYGCiciZdeWxSWNpHO4DOx4jPrIUSynaSTpeK4Xxm',NULL,'Yes',1,'2024-10-24 20:09:57','2024-10-24 17:10:38'),
+(9,'Reaal','vendor',11,'9744886111','reaal2007@gmail.com','$2y$10$2IV5vtkjLTmJf1hxzZPDG.pfjIJmHO1z/hTldny40ztKfRDt.yCi.',NULL,'Yes',1,'2024-10-24 20:13:44','2024-10-28 11:50:47'),
+(10,'Binyamin','vendor',12,'8111948874','www.reaalnn1@gmail.com','$2a$12$xvkjSScUPRexfcJTAy9ATutIeGUuRgJrjDIdL/.xlrddEvRZINpeC',NULL,'Yes',1,'2024-10-29 11:23:22','2024-11-07 09:15:50'),
+(11,'mdayurmanthra@gmail.com','vendor',13,'9072995522','mdayurmanthra@gmail.com','$2y$10$Z6k4a6vO5PEpT3bio7mIHu5cZeR8YdnO9SfA4vPvHVtMdUhnHVEai',NULL,'Yes',1,'2024-11-01 12:15:38','2024-11-07 09:15:48'),
+(12,'QjDRidNQkxGT','vendor',14,'2037466894','giannonidgra@yahoo.com','$2y$10$NGmDYNjQBwddwgO64.XA0e/xOXb.IIGliszMz8iVh6zAUXdwV1/Vi',NULL,'Yes',0,'2024-11-08 07:04:03','2024-11-08 07:04:03'),
+(13,'FjJMMmWXlKqWL','vendor',15,'7659403521','kharmonmk9659@gmail.com','$2y$10$WBg4HT1K6Tk0qJ1cpgpA4eYYrEG5pnJwu0uDlrWB9/gOiKt77Pg4y',NULL,'Yes',0,'2024-11-09 05:33:35','2024-11-09 05:33:35'),
+(14,'NN TRADERS','vendor',16,'8547412147','reaalnn@gmail.com','$2y$10$Y8NMm9wcGIL6KEqCKZxxO.YQyBt3YAiYN4RO9P1/QnJOesqWokFSa',NULL,'Yes',1,'2024-11-09 07:07:28','2024-11-09 05:08:45'),
+(15,'MHUlovdaA','vendor',17,'8919389995','pgopepnxvfkvwv@yahoo.com','$2y$10$3WN4jJOWTI5U8iSjX6.YYOvQCo78/r7OMNZaWDIggwzUt.0x7pnK2',NULL,'No',0,'2024-11-09 23:26:19','2024-11-09 23:26:19'),
+(16,'XqJVtNvIMXFA','vendor',18,'5320301146','franktroitl@gmail.com','$2y$10$vG9vaIu6sYZWD/yIrlBoM.FBzAKqqOUFkAnFTB5s2O9f3GW4kCjiS',NULL,'No',0,'2024-11-10 16:55:03','2024-11-10 16:55:03');
 
 /*Table structure for table `banners` */
 
@@ -1634,7 +1639,7 @@ CREATE TABLE `products` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 /*Data for the table `products` */
 
@@ -1649,7 +1654,9 @@ insert  into `products`(`id`,`section_id`,`category_id`,`brand_id`,`vendor_id`,`
 (8,1,6,2,1,2,'vendor','Blue T-Shirt','BT501','Blue',1600,0,0,'64835.jpg',NULL,'',NULL,NULL,NULL,NULL,NULL,NULL,'full sleeve',NULL,'cotton',NULL,NULL,NULL,'No','No',1,'2022-10-15 18:40:41','2024-10-30 06:32:56'),
 (9,1,6,3,9,7,'vendor','Black T-shirt','BT01','black',1200,10,200,'95056.jpg',NULL,'100',NULL,NULL,NULL,NULL,NULL,NULL,'half sleeve',NULL,'cotton',NULL,NULL,NULL,'No','No',1,'2023-03-04 02:42:45','2023-06-09 18:11:41'),
 (10,6,10,1,1,2,'vendor','Real Product','Reaal','Black',250,0,0,'14817.jpg','891847685.webm',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'No','No',1,'2024-11-08 00:49:23','2024-11-08 00:49:23'),
-(11,6,10,9,1,2,'vendor','Reaal 2','Reaal2','Blue',500,20,100,'77953.jpg','2081808310.mp4','1','Reaal 2 Product',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'reaal2','reeal2','Reaal product 2','Yes','Yes',1,'2024-11-08 01:08:22','2024-11-08 01:08:22');
+(11,6,10,9,1,2,'vendor','Reaal 2','Reaal2','Blue',500,20,100,'50664.jpg','2081808310.mp4','1','Reaal 2 Product',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'reaal2','reeal2','Reaal product 2','Yes','Yes',1,'2024-11-08 01:08:22','2024-11-09 15:56:22'),
+(12,1,6,9,12,10,'vendor','NN','11','Red',125,0,0,'28102.jpg',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'No','No',1,'2024-11-09 05:20:56','2024-11-09 05:20:56'),
+(13,1,2,9,1,2,'vendor','SAREE','0101','RED AND BLUE',500,10,150,'94472.jpg','56512036.jpg','0101','B',NULL,NULL,NULL,NULL,NULL,'full sleeve',NULL,'cotton',NULL,NULL,NULL,'No','No',1,'2024-11-10 15:40:32','2024-11-10 15:41:14');
 
 /*Table structure for table `products_attributes` */
 
@@ -1795,7 +1802,7 @@ CREATE TABLE `recently_viewed_products` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=165 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=171 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 /*Data for the table `recently_viewed_products` */
 
@@ -1963,18 +1970,24 @@ insert  into `recently_viewed_products`(`id`,`product_id`,`session_id`,`created_
 (161,7,'51a2b2c9eee32243dd85c628e707fbd5',NULL,NULL),
 (162,9,'51a2b2c9eee32243dd85c628e707fbd5',NULL,NULL),
 (163,10,'51a2b2c9eee32243dd85c628e707fbd5',NULL,NULL),
-(164,11,'51a2b2c9eee32243dd85c628e707fbd5',NULL,NULL);
+(164,11,'51a2b2c9eee32243dd85c628e707fbd5',NULL,NULL),
+(165,11,'6397e7512492ee081dabbefcc070740c',NULL,NULL),
+(166,10,'6397e7512492ee081dabbefcc070740c',NULL,NULL),
+(167,11,'c311c894bcd31a7df9bb3e52d3f0bde3',NULL,NULL),
+(168,12,'f8b3362929a13f027860ee486acb1a9b',NULL,NULL),
+(169,12,'d2df019c098351eca30d282351ea6665',NULL,NULL),
+(170,11,'541cd3eb44d4d7c190c6769add44f08d',NULL,NULL);
 
 /*Table structure for table `sections` */
 
 CREATE TABLE `sections` (
-  `id` bigint(20) unsigned NOT NULL,
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   `status` tinyint(4) NOT NULL DEFAULT 1,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 /*Data for the table `sections` */
 
@@ -1982,7 +1995,8 @@ insert  into `sections`(`id`,`name`,`status`,`created_at`,`updated_at`) values
 (1,'Clothing',1,NULL,'2022-09-23 00:58:50'),
 (2,'Electronics',1,NULL,'2022-09-23 00:08:47'),
 (4,'Appliances',1,NULL,NULL),
-(6,'Computers',1,'2022-08-20 03:57:04','2022-09-23 00:21:54');
+(6,'Computers',1,'2022-08-20 03:57:04','2022-09-23 00:21:54'),
+(7,'Pharmaceuticals',1,'2024-11-08 19:19:59','2024-11-08 19:20:35');
 
 /*Table structure for table `shipping_charges` */
 
@@ -2307,7 +2321,7 @@ CREATE TABLE `vendors` (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `vendors_email_unique` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 /*Data for the table `vendors` */
 
@@ -2319,8 +2333,13 @@ insert  into `vendors`(`id`,`name`,`address`,`city`,`state`,`country`,`pincode`,
 (9,'Ghali Shennway','8 Fady Safwat St.','El Ganayen','Suez','Egypt',NULL,'01154557789','ghali@yahoo.com','Yes',0.00,1,'2022-10-15 00:18:28','2024-10-25 01:18:53'),
 (10,'Banee Store',NULL,NULL,NULL,NULL,NULL,'9446827218','baneeishaque@gmail.com','Yes',0.00,1,'2024-10-24 20:09:57','2024-10-24 17:10:38'),
 (11,'Reaal',NULL,NULL,NULL,NULL,NULL,'9744886111','reaal2007@gmail.com','Yes',0.00,1,'2024-10-24 20:13:44','2024-10-28 11:50:47'),
-(12,'Binyamin',NULL,NULL,NULL,NULL,NULL,'8111948874','www.reaalnn1@gmail.com','No',0.00,1,'2024-10-29 11:23:22','2024-11-07 09:15:50'),
-(13,'mdayurmanthra@gmail.com',NULL,NULL,NULL,NULL,NULL,'9072995522','mdayurmanthra@gmail.com','No',0.00,1,'2024-11-01 12:15:38','2024-11-07 09:15:48');
+(12,'Binyamin',NULL,NULL,NULL,NULL,NULL,'8111948874','www.reaalnn1@gmail.com','Yes',0.00,1,'2024-10-29 11:23:22','2024-11-07 09:15:50'),
+(13,'mdayurmanthra@gmail.com',NULL,NULL,NULL,NULL,NULL,'9072995522','mdayurmanthra@gmail.com','Yes',0.00,1,'2024-11-01 12:15:38','2024-11-07 09:15:48'),
+(14,'QjDRidNQkxGT',NULL,NULL,NULL,NULL,NULL,'2037466894','giannonidgra@yahoo.com','Yes',0.00,1,'2024-11-08 07:04:03','2024-11-08 07:04:03'),
+(15,'FjJMMmWXlKqWL',NULL,NULL,NULL,NULL,NULL,'7659403521','kharmonmk9659@gmail.com','Yes',0.00,1,'2024-11-09 05:33:35','2024-11-09 05:33:35'),
+(16,'NN TRADERS',NULL,NULL,NULL,NULL,NULL,'8547412147','reaalnn@gmail.com','Yes',0.00,1,'2024-11-09 07:07:28','2024-11-09 05:08:45'),
+(17,'MHUlovdaA',NULL,NULL,NULL,NULL,NULL,'8919389995','pgopepnxvfkvwv@yahoo.com','No',0.00,0,'2024-11-09 23:26:19','2024-11-09 23:26:19'),
+(18,'XqJVtNvIMXFA',NULL,NULL,NULL,NULL,NULL,'5320301146','franktroitl@gmail.com','No',0.00,0,'2024-11-10 16:55:03','2024-11-10 16:55:03');
 
 /*Table structure for table `vendors_bank_details` */
 
@@ -2369,7 +2388,7 @@ CREATE TABLE `vendors_business_details` (
 /*Data for the table `vendors_business_details` */
 
 insert  into `vendors_business_details`(`id`,`vendor_id`,`shop_name`,`shop_address`,`shop_city`,`shop_state`,`shop_country`,`shop_pincode`,`shop_mobile`,`shop_website`,`shop_email`,`address_proof`,`address_proof_image`,`business_license_number`,`gst_number`,`pan_number`,`created_at`,`updated_at`) values 
-(1,1,'Electronics World','1234-Mall Road','New Cairo','Cairo','Egypt','00000000000','1111111111','amazon.com.eg','yasser@admin.com','Aadhar card','52583.png','2222222','3333333337','444444444',NULL,'2022-10-16 01:41:35'),
+(1,1,'Electronics World','1234-Mall Road','New Cairo','Cairo','Egypt','00000000000','1111111111','amazon.com.eg','yasser@admin.com','Aadhar card','58313.jpg','2222222','3333333337','444444444',NULL,'2024-11-09 15:50:14'),
 (2,6,'B Tech','test','sgs','sgsag','Bahrain','454545','1111111111','sagasga',NULL,'PAN','','3333','333333333','11111',NULL,'2022-10-16 02:49:44'),
 (3,9,'Ghali Vendor',NULL,'Cairo',NULL,NULL,NULL,'0113335845',NULL,NULL,'Passport','',NULL,NULL,NULL,NULL,NULL);
 
