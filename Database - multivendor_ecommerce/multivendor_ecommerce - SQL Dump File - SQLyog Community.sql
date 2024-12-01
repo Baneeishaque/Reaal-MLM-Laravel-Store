@@ -1,6 +1,6 @@
 /*
 SQLyog Community v13.3.0 (64 bit)
-MySQL - 10.4.32-MariaDB : Database - multivendor_ecommerce
+MySQL - 11.6.2-MariaDB : Database - multivendor_ecommerce
 *********************************************************************
 */
 
@@ -62,7 +62,7 @@ CREATE TABLE `banners` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 /*Data for the table `banners` */
 
@@ -70,7 +70,8 @@ insert  into `banners`(`id`,`image`,`type`,`link`,`title`,`alt`,`status`,`create
 (1,'banner-1.jpg','Slider','spring-collection','Spring Collection','Spring Collection',1,NULL,'2024-10-25 02:34:58'),
 (2,'banner-2.jpg','Slider','tops','Tops','Tops',1,NULL,'2024-10-25 02:34:57'),
 (5,'22225.png','','men','men','men',1,'2022-09-26 01:47:36','2024-10-25 02:34:55'),
-(6,'50216.jpg','Fix','men','men','men',1,'2022-09-26 22:25:43','2024-10-25 02:34:46');
+(6,'50216.jpg','Fix','men','men','men',1,'2022-09-26 22:25:43','2024-10-25 02:34:46'),
+(8,'28279.png','Slider','test','Test','test',0,'2024-12-01 18:14:29','2024-12-01 18:16:37');
 
 /*Table structure for table `brands` */
 
@@ -107,7 +108,7 @@ CREATE TABLE `carts` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=85 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=86 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 /*Data for the table `carts` */
 
@@ -482,7 +483,7 @@ CREATE TABLE `countries` (
   `created_at` datetime NOT NULL,
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=247 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=247 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 /*Data for the table `countries` */
 
@@ -1049,7 +1050,7 @@ CREATE TABLE `orders` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=62 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=64 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 /*Data for the table `orders` */
 
@@ -1103,7 +1104,9 @@ insert  into `orders`(`id`,`user_id`,`name`,`address`,`city`,`state`,`country`,`
 (58,2,'Ibrahim','16 El Fath St.','Cairo','Cairo','Egypt','141001','0119578625','ibrahim@gmail.com',100.00,NULL,NULL,'New','COD','COD',907.50,NULL,NULL,0,'2023-12-19 04:24:38','2023-12-19 04:24:38'),
 (59,2,'Ibrahim','16 El Fath St.','Cairo','Cairo','Egypt','141001','0119578625','ibrahim@gmail.com',100.00,NULL,NULL,'New','COD','COD',907.50,NULL,NULL,0,'2023-12-19 05:40:32','2023-12-19 05:40:32'),
 (60,2,'Ibrahim','16 El Fath St.','Cairo','Cairo','Egypt','141001','0119578625','ibrahim@gmail.com',100.00,NULL,NULL,'New','COD','COD',907.50,NULL,NULL,0,'2023-12-19 05:52:44','2023-12-19 05:52:44'),
-(61,2,'Ibrahim','16 El Fath St.','Cairo','Cairo','Egypt','141001','0119578625','ibrahim@gmail.com',100.00,NULL,NULL,'New','COD','COD',907.50,NULL,NULL,0,'2023-12-19 05:54:52','2023-12-19 05:54:52');
+(61,2,'Ibrahim','16 El Fath St.','Cairo','Cairo','Egypt','141001','0119578625','ibrahim@gmail.com',100.00,NULL,NULL,'New','COD','COD',907.50,NULL,NULL,0,'2023-12-19 05:54:52','2023-12-19 05:54:52'),
+(62,2,'Ibrahim','16 El Fath St.','Cairo','Cairo','Egypt','141001','0119578625','ibrahim@gmail.com',100.00,NULL,NULL,'New','COD','COD',1180.00,NULL,NULL,0,'2024-12-01 18:55:05','2024-12-01 18:55:05'),
+(63,2,'Ibrahim','16 El Fath St.','Cairo','Cairo','Egypt','141001','0119578625','ibrahim@gmail.com',100.00,NULL,NULL,'New','COD','COD',1180.00,NULL,NULL,0,'2024-12-01 18:55:36','2024-12-01 18:55:36');
 
 /*Table structure for table `orders_logs` */
 
@@ -1155,7 +1158,7 @@ CREATE TABLE `orders_products` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=72 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=74 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 /*Data for the table `orders_products` */
 
@@ -1230,7 +1233,9 @@ insert  into `orders_products`(`id`,`order_id`,`user_id`,`vendor_id`,`admin_id`,
 (68,58,2,9,7,10,'PT01','Pink T-Shirt','Pink','Small',807.50,1,NULL,NULL,NULL,0,'2023-12-19 04:24:38','2023-12-19 04:24:38'),
 (69,59,2,9,7,10,'PT01','Pink T-Shirt','Pink','Small',807.50,1,NULL,NULL,NULL,0,'2023-12-19 05:40:32','2023-12-19 05:40:32'),
 (70,60,2,9,7,10,'PT01','Pink T-Shirt','Pink','Small',807.50,1,NULL,NULL,NULL,0,'2023-12-19 05:52:44','2023-12-19 05:52:44'),
-(71,61,2,9,7,10,'PT01','Pink T-Shirt','Pink','Small',807.50,1,NULL,NULL,NULL,0,'2023-12-19 05:54:52','2023-12-19 05:54:52');
+(71,61,2,9,7,10,'PT01','Pink T-Shirt','Pink','Small',807.50,1,NULL,NULL,NULL,0,'2023-12-19 05:54:52','2023-12-19 05:54:52'),
+(72,62,2,9,7,9,'BT01','Black T-shirt','black','Small',1080.00,1,NULL,NULL,NULL,0,'2024-12-01 18:55:05','2024-12-01 18:55:05'),
+(73,63,2,9,7,9,'BT01','Black T-shirt','black','Small',1080.00,1,NULL,NULL,NULL,0,'2024-12-01 18:55:36','2024-12-01 18:55:36');
 
 /*Table structure for table `password_resets` */
 
@@ -1692,7 +1697,7 @@ insert  into `products_attributes`(`id`,`product_id`,`size`,`price`,`stock`,`sku
 (14,6,'Medium',3000.00,10,'BS01-M',1,'2022-11-01 03:29:57','2023-06-09 18:38:27'),
 (15,8,'Small',1000.00,6,'BT501-S',1,'2023-03-01 18:06:27','2023-07-27 01:45:04'),
 (16,8,'Medium',1200.00,9,'BT501-M',1,'2023-03-01 18:06:27','2023-04-23 03:35:22'),
-(17,9,'Small',1200.00,3,'BS001-S',1,'2023-03-04 02:46:33','2023-03-04 02:46:33'),
+(17,9,'Small',1200.00,1,'BS001-S',1,'2023-03-04 02:46:33','2024-12-01 18:55:36'),
 (18,10,'Small',950.00,0,'PT01',1,'2023-03-06 02:26:31','2024-10-24 17:32:22');
 
 /*Table structure for table `products_filters` */
@@ -1802,7 +1807,7 @@ CREATE TABLE `recently_viewed_products` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=171 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=175 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 /*Data for the table `recently_viewed_products` */
 
@@ -1976,7 +1981,11 @@ insert  into `recently_viewed_products`(`id`,`product_id`,`session_id`,`created_
 (167,11,'c311c894bcd31a7df9bb3e52d3f0bde3',NULL,NULL),
 (168,12,'f8b3362929a13f027860ee486acb1a9b',NULL,NULL),
 (169,12,'d2df019c098351eca30d282351ea6665',NULL,NULL),
-(170,11,'541cd3eb44d4d7c190c6769add44f08d',NULL,NULL);
+(170,11,'541cd3eb44d4d7c190c6769add44f08d',NULL,NULL),
+(171,13,'e88ed34baeb44ea237e619849e1d4387',NULL,NULL),
+(172,11,'e88ed34baeb44ea237e619849e1d4387',NULL,NULL),
+(173,12,'e88ed34baeb44ea237e619849e1d4387',NULL,NULL),
+(174,9,'e88ed34baeb44ea237e619849e1d4387',NULL,NULL);
 
 /*Table structure for table `sections` */
 
@@ -2285,7 +2294,7 @@ CREATE TABLE `users` (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `users_email_unique` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=37 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=38 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 /*Data for the table `users` */
 
@@ -2300,7 +2309,8 @@ insert  into `users`(`id`,`name`,`address`,`city`,`state`,`country`,`pincode`,`m
 (30,'Raouf',NULL,NULL,NULL,NULL,NULL,NULL,'raouf@hotmail.com',NULL,'$2a$12$xvkjSScUPRexfcJTAy9ATutIeGUuRgJrjDIdL/.xlrddEvRZINpeC',1,NULL,'DUCpVtiKrL2j2Mr9FPfWdXwY9N74CRjUgBRTRIX1rEqnCMUVZQygaHyRLOoz','2023-04-24 03:46:37','2023-04-24 03:46:37'),
 (34,'Farag',NULL,NULL,NULL,NULL,NULL,NULL,'farag@hotmail.com',NULL,'$2a$12$xvkjSScUPRexfcJTAy9ATutIeGUuRgJrjDIdL/.xlrddEvRZINpeC',1,NULL,'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZmQ4YjVlZWE5MDg4ZjE1MmUwNzQ1YmJhNjJmYzE2NWQ3YjUzMTM5YjM3ZTAwZDQwYjEyMzU0NDI5NTYyZmNjMjFlZWZkMjlkYmRlODFjNDMiLCJpYXQiOjE2ODI5MDU2OTEuMDEyMjI2LCJuYmYiOjE2ODI5MDU2OTEuMDEyMjI5LCJleHAiOjE3MTQ1MjgwOTAuNzU3ODAyLCJzdWIiOiIzNCIsInNjb3BlcyI6W119.HWzoeLfegHgLJE_bxRgsQfvT-V-2SZNR-k5_Z9NV1cIEFPxcSziCYUlHFGh38JjDWGKQy2cQEVym4jtBNJo_OFj31OVBNmZfj6P7odQve-R-NRiDxBBoX43RNlh5bAVkw2UPMZZ9B8wLcsFjxBxfJMg5M1zU1X05OuQnp4x9tgQJJzlCV9l1XIRmthhmT7_mKeirOVW_j9cCeQY9HZyiZbzU_1hWltourDqVmWiQhAkdA4Im7JF4pD98jgfu_vBntdr-7KZZhkXDgF1YqelTpuzCP8bqPyqMry6GLLZYMAtrmo_iiN3I50GVE_MKw9mEy26o5y4dkLdkNHbHy5JFdxS2iVyc3MDj2LyxCUciyqheEDaavTPq48toBBexg2kv9EFvtnvzC9b68InwN1mM0U9xbPCne4-6gZb5WLKnu1ybj2ljNuW0StEWZqqWgohaOsKYb0-6u5l7-sJKH-EMsZhtnwml5sxlsfs5ZSpVpGqgJFN3NHow2IZ5sNn44Ig_2wALVaBHxeHKzSnK7jhFuWc-Ew_26gpQdbyqhHGNq5Rq_UOngqEPwdH0KgP4triZxsnehhMwJZrTMEefeBOfdc-x207iIQ_wN6cnsi5dG_FRu6Om9BCjjoohKkxbUhIOARBWHSZGCb3QHvB1sOCAlhxxAXwYBDLhyVMU438amQQ','2023-05-01 04:18:10','2023-05-01 04:18:11'),
 (35,'Smith Mark',NULL,NULL,NULL,NULL,NULL,'01175799544','smith@smith.com',NULL,'$2y$10$iAPDGwzk3doqOvqEP4QPh.2ByR66vqTZdzIkBfs6GPDz8ykl.c8BS',0,NULL,NULL,'2024-08-04 03:46:38','2024-08-04 03:46:38'),
-(36,'Saiful101',NULL,NULL,NULL,NULL,NULL,'09744886111','saiful@suful.com',NULL,'$2y$10$D8oHBnHoyYF9U3tjBwIlcuVSapMnoznk1Adowx8DQXejpRqvPZlfG',0,NULL,NULL,'2024-10-28 11:48:58','2024-10-28 11:48:58');
+(36,'Saiful101',NULL,NULL,NULL,NULL,NULL,'09744886111','saiful@suful.com',NULL,'$2y$10$D8oHBnHoyYF9U3tjBwIlcuVSapMnoznk1Adowx8DQXejpRqvPZlfG',0,NULL,NULL,'2024-10-28 11:48:58','2024-10-28 11:48:58'),
+(37,'Banee Ishaque K',NULL,NULL,NULL,NULL,NULL,'09446827218','baneeishaque@gmail.com',NULL,'$2y$10$kB.TGxOLd2x9jV1maOXTXedqDZ01RcWFruemqX7YrZx24hi46.RNe',0,NULL,NULL,'2024-12-01 18:39:01','2024-12-01 18:39:01');
 
 /*Table structure for table `vendors` */
 
