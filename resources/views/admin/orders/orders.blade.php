@@ -12,6 +12,29 @@
                             <h4 class="card-title">Orders</h4>
                             
 
+                            <!-- Filter Section -->
+                            <form action="{{ url('admin/orders') }}" method="GET" class="form-inline mb-3">
+                                <div class="form-group mr-3">
+                                    <label for="order_status" class="mr-2">Order Status:</label>
+                                    <select name="order_status" id="order_status" class="form-control">
+                                        <option value="">All</option>
+                                        <option value="pending">Pending</option>
+                                        <option value="shipped">Shipped</option>
+                                        <option value="delivered">Delivered</option>
+                                        <option value="cancelled">Cancelled</option>
+                                    </select>
+                                </div>
+                                <div class="form-group mr-3">
+                                    <label for="start_date" class="mr-2">Start Date:</label>
+                                    <input type="date" name="start_date" id="start_date" class="form-control">
+                                </div>
+                                <div class="form-group mr-3">
+                                    <label for="end_date" class="mr-2">End Date:</label>
+                                    <input type="date" name="end_date" id="end_date" class="form-control">
+                                </div>
+                                <button type="submit" class="btn btn-primary">Filter</button>
+                            </form>
+                            <!-- Filter Section /- -->
 
                             <div class="table-responsive pt-3">
                                 {{-- DataTable --}}

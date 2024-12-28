@@ -20,9 +20,9 @@ class OrderController extends Controller
     // Note: In the Admin Panel, in the Orders Management section, if the authenticated/logged-in user is 'vendor', we'll show the orders of the products added by/related to that 'vendor' ONLY, but if the authenticated/logged-in user is 'admin', we'll show ALL orders    
 
 
-
-    // Render admin/orders/orders.blade.php page (Orders Management section) in the Admin Panel    
-    public function orders() {
+    // Render admin/orders/orders.blade.php page (Orders Management section) in the Admin Panel
+    public function orders(Request $request)
+    {
         // Correcting issues in the Skydash Admin Panel Sidebar using Session
         Session::put('page', 'orders');
 
@@ -41,19 +41,32 @@ class OrderController extends Controller
         }
 
 
-        if ($adminType == 'vendor') { // If the authenticated/logged-in user is 'vendor', we show ONLY the orders of the products added by that specific 'vendor' ONLY
-            $orders = Order::with([ // Eager Loading: https://laravel.com/docs/9.x/eloquent-relationships#eager-loading    // 'orders_products' is the relationship method name in Order.php model    // Constraining Eager Loads: https://laravel.com/docs/9.x/eloquent-relationships#constraining-eager-loads    // Subquery Where Clauses: https://laravel.com/docs/9.x/queries#subquery-where-clauses    // Advanced Subqueries: https://laravel.com/docs/9.x/eloquent#advanced-subqueries
-                'orders_products' => function($query) use ($vendor_id) { // function () use ()     syntax: https://www.php.net/manual/en/functions.anonymous.php#:~:text=the%20use%20language%20construct     // 'orders_products' is the Relationship method name in Order.php model
-                    $query->where('vendor_id', $vendor_id); // `vendor_id` in `orders_products` table
+        // If the authenticated/logged-in user is 'vendor', we show ONLY the orders of the products added by that specific 'vendor' ONLY
+        if ($adminType == 'vendor') {
+            $orders = Order::with([
+                'orders_products' => function ($query) use ($vendor_id) {
+                    $query->where('vendor_id', $vendor_id);
                 }
-            ])->orderBy('id', 'Desc')->get()->toArray();
+            ])->orderBy('id', 'Desc');
             // dd($orders);
-
-        } else { // if the authenticated/logged-in user is 'admin', we show ALL orders
-            $orders = Order::with('orders_products')->orderBy('id', 'Desc')->get()->toArray(); // Eager Loading: https://laravel.com/docs/9.x/eloquent-relationships#eager-loading    // 'orders_products' is the relationship method name in Order.php model
+        } else {
+            // if the authenticated/logged-in user is 'admin', we show ALL orders
+            $orders = Order::with('orders_products')->orderBy('id', 'Desc');
             // dd($orders);
         }
 
+        // Filter by order status
+        if ($request->has('order_status') && $request->order_status != '') {
+            $orders->where('order_status', $request->order_status);
+        }
+
+        // Filter by date range
+        if ($request->has('start_date') && $request->has('end_date')) {
+            $orders->whereBetween('created_at', [$request->start_date, $request->end_date]);
+        }
+
+        $orders = $orders->get()->toArray();
+        // dd($orders);
 
         return view('admin.orders.orders')->with(compact('orders'));
     }
