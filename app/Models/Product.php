@@ -9,6 +9,11 @@ class Product extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'product_bv',
+        'product_tax',
+        'product_delivery_charge',
+    ];
 
     // Every 'product' belongs to a 'section'
     public function section()

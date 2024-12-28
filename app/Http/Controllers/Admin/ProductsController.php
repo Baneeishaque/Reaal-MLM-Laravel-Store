@@ -274,6 +274,10 @@ class ProductsController extends Controller
 
             $product->status = 1;
 
+            $product->product_bv = $data['product_bv'];
+            $product->product_tax = $data['product_tax'];
+            $product->product_delivery_charge = $data['product_delivery_charge'];
+
 
             $product->save(); // Save all data in the database
 

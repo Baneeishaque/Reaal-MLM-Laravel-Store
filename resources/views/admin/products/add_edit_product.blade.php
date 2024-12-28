@@ -129,6 +129,18 @@
                                     <input type="text" class="form-control" id="product_name" placeholder="Enter Product Name" name="product_name" @if (!empty($product['product_name'])) value="{{ $product['product_name'] }}" @else value="{{ old('product_name') }}" @endif>  {{-- Repopulating Forms (using old() method): https://laravel.com/docs/9.x/validation#repopulating-forms --}}
                                 </div>
                                 <div class="form-group">
+                                    <label for="product_bv">Product BV</label>
+                                    <input type="text" class="form-control" id="product_bv" placeholder="Enter Product BV" name="product_bv" @if (!empty($product['product_bv'])) value="{{ $product['product_bv'] }}" @else value="{{ old('product_bv') }}" @endif>
+                                </div>
+                                <div class="form-group">
+                                    <label for="product_bv">Delivery Charge</label>
+                                    <input type="text" class="form-control" id="product_delivery_charge" placeholder="Enter Product Delivery Charge" name="product_delivery_charge" @if (!empty($product['product_delivery_charge'])) value="{{ $product['product_delivery_charge'] }}" @else value="{{ old('product_delivery_charge') }}" @endif>
+                                </div>
+                                <div class="form-group">
+                                    <label for="product_bv">Tax</label>
+                                    <input type="text" class="form-control" id="product_tax" placeholder="Enter Product Tax" name="product_tax" @if (!empty($product['product_tax'])) value="{{ $product['product_tax'] }}" @else value="{{ old('product_tax') }}" @endif>
+                                </div>
+                                <div class="form-group">
                                     <label for="product_code">Product Code</label>
                                     <input type="text" class="form-control" id="product_code" placeholder="Enter Code" name="product_code" @if (!empty($product['product_code'])) value="{{ $product['product_code'] }}" @else value="{{ old('product_code') }}" @endif>  {{-- Repopulating Forms (using old() method): https://laravel.com/docs/9.x/validation#repopulating-forms --}}
                                 </div>
