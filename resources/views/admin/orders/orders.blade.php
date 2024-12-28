@@ -10,7 +10,6 @@
                     <div class="card">
                         <div class="card-body">
                             <h4 class="card-title">Orders</h4>
-                            
 
                             <!-- Filter Section -->
                             <form action="{{ url('admin/orders') }}" method="GET" class="form-inline mb-3">
