@@ -210,29 +210,38 @@
 
                             @php $getDiscountPrice = \App\Models\Product::getDiscountPrice($productDetails['id']) @endphp
 
-                            <span class="getAttributePrice">{{-- this <span> will be used by jQuery for getting the respective `price` and `stock` depending on the selected `size` in the <select> box (through the AJAX call). Check front/js/custom.js --}}
+                            {{-- this <span> will be used by jQuery for getting the respective `price` and `stock` depending on the selected `size` in the <select> box (through the AJAX call). Check front/js/custom.js --}}
+                            <span class="getAttributePrice">
 
-                                @if ($getDiscountPrice > 0) {{-- if there's a discount on the product price --}}
-                                    <div class="price">
-                                        <h4>INR{{ $getDiscountPrice }}</h4>
-                                    </div>
+                                {{-- if there's a discount on the product price --}}
+                                @if ($getDiscountPrice > 0)
                                     <div class="original-price">
                                         <span>Original Price:</span>
-                                        <span>INR{{ $productDetails['product_price'] }}</span> {{-- the product original price (without discount) --}}
+                                        {{-- the product original price (without discount) --}}
+                                        <span>INR <strike>{{ $productDetails['product_price'] }}</strike></span>
                                     </div>
-                                @else {{-- if there's no discount on the product price --}}
+                                    <br/>
                                     <div class="price">
-                                        <h4>INR{{ $productDetails['product_price'] }}</h4> {{-- the product original price (without discount) --}}
+                                        <h4>INR {{ $getDiscountPrice }}</h4>
+                                    </div>
+                                @else
+                                    {{-- if there's no discount on the product price --}}
+                                    <div class="price">
+                                        {{-- the product original price (without discount) --}}
+                                        <h4>INR{{ $productDetails['product_price'] }}</h4>
                                     </div>
                                 @endif
 
-                            </span> 
-
+                            </span>
 
 
                         </div>
+                        <div class="left">
+                            <span>Product BV:</span>
+                            <span>{{ $productDetails['product_bv'] }}</span>
+                        </div>
                         <div class="section-4-sku-information u-s-p-y-14">
-                            <h6 class="information-heading u-s-m-b-8">Sku Information:</h6>
+                            <h6 class="information-heading u-s-m-b-8">Additional Information:</h6>
                             <div class="left">
                                 <span>Product Code:</span>
                                 <span>{{ $productDetails['product_code'] }}</span>
@@ -241,6 +250,20 @@
                                 <span>Product Color:</span>
                                 <span>{{ $productDetails['product_color'] }}</span>
                             </div>
+                            <br/>
+                            <div class="left">
+                                @if ($productDetails['product_delivery_charge'] == 0)
+                                    <span>Delivery Charge: <span style="font-size: 1.5em; font-weight: bold;">Free</span></span>
+                                @else
+                                    <span>Delivery Charge:</span>
+                                    <span>{{ $productDetails['product_delivery_charge'] }}</span>
+                                @endif
+                            </div>
+                            <div class="left">
+                                <span>Product Tax:</span>
+                                <span>{{ $productDetails['product_tax'] }} %</span>
+                            </div>
+                            <br/>
                             <div class="availability">
                                 <span>Availability:</span>
 
