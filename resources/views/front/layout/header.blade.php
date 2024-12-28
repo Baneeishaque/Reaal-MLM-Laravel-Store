@@ -15,8 +15,9 @@ $sections = \App\Models\Section::sections();
                 <ul class="primary-nav g-nav">
                     <li>
                         <a href="tel:+918547412147">
-                        <i class="fas fa-phone u-c-brand u-s-m-r-9"></i>
-                        Telephone: +918547412147</a>
+                        <i class="fas fa-mobile-alt u-c-brand u-s-m-r-9"></i>
+{{--                        <i class="fas fa-whatsapp-square u-c-brand u-s-m-r-9"></i>--}}
+                        Contact: +91 8547412147</a>
                     </li>
                     <li>
                         <a href="mailto:Reaal2007@gmail.com">
