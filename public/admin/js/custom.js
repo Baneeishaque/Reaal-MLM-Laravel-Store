@@ -67,8 +67,28 @@ $(document).ready(function() {
                     $('#admin-' + admin_id).html('<i style="font-size: 25px" class="mdi mdi-bookmark-check" status="Active"></i>');
                 }
             },
-            error  : function() {
-                alert('Error');
+            error: function (xhr, status, error) {
+                // Capture detailed error information
+                var errorMsg = `
+                    Error Occurred:
+                    Status: ${xhr.status}
+                    Status Text: ${xhr.statusText}
+                    Error: ${error}
+                    Response Text: ${xhr.responseText}
+                    ReadyState: ${xhr.readyState}
+                    `;
+                alert(errorMsg);
+
+                // Optionally log to console for debugging
+                console.error('Error Details:', {
+                    status: xhr.status,
+                    statusText: xhr.statusText,
+                    responseText: xhr.responseText,
+                    responseJSON: xhr.responseJSON,
+                    error: error,
+                    readyState: xhr.readyState,
+                    headers: xhr.getAllResponseHeaders()
+                });
             }
         });
     });
