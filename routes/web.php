@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Front\OrderController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -170,6 +171,7 @@ Route::prefix('/admin')->namespace('App\Http\Controllers\Admin')->group(function
 
 });
 
+Route::get('order/{id}/download', [OrderController::class, 'downloadInvoice'])->name('order.downloadInvoice');
 
 
 

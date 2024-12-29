@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Front;
 use App\Http\Controllers\Controller;
 
 use App\Models\Order;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class OrderController extends Controller
 {
@@ -24,5 +25,17 @@ class OrderController extends Controller
 
             return view('front.orders.order_details')->with(compact('orderDetails'));
         }
+    }
+
+    public function downloadInvoice($id)
+    {
+        $orderDetails = Order::with('orders_products')->find($id);
+
+        if (!$orderDetails) {
+            return redirect()->back()->with('error', 'Order not found');
+        }
+
+        $pdf = PDF::loadView('pdf.invoice', compact('orderDetails'));
+        return $pdf->download('invoice-' . $orderDetails->id . '.pdf');
     }
 }

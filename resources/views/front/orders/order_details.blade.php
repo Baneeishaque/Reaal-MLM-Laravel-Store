@@ -154,6 +154,9 @@
                     </tr>
                 </table>
 
+                <!-- Add download link -->
+                <a href="{{ route('order.downloadInvoice', $orderDetails['id']) }}"
+                   class="btn btn-primary">Download Invoice</a>
             </div>
         </div>
     </div>
