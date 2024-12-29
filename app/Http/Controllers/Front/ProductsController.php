@@ -1086,34 +1086,6 @@ class ProductsController extends Controller
             // echo 'Order placed successfully!';
             // exit;
 
-            // Send placing an order confirmation email to the user    
-            // Note: We send placing an order confirmation email and SMS to the user right away (immediately) if the order is "COD", but if the order payment method is like PayPal or any other payment gateway, we send the order confirmation email and SMS after the user makes the payment
-            $orderDetails = Order::with('orders_products')->where('id', $order_id)->first()->toArray(); // Eager Loading: https://laravel.com/docs/9.x/eloquent-relationships#eager-loading    // 'orders_products' is the relationship method name in Order.php model
-
-            if ($data['payment_gateway'] == 'COD') { // if the `payment_gateway` selected by the user is 'COD' (in front/products/checkout.blade.php), we send the placing the order confirmation email and SMS immediately
-                // Sending the Order confirmation email
-                $email = Auth::user()->email; // Retrieving The Authenticated User: https://laravel.com/docs/9.x/authentication#retrieving-the-authenticated-user
-
-                // The email message data/variables that will be passed in to the email view
-                $messageData = [
-                    'email' => $email,
-                    'name' => Auth::user()->name, // Retrieving The Authenticated User: https://laravel.com/docs/9.x/authentication#retrieving-the-authenticated-user
-                    'order_id' => $order_id,
-                    'orderDetails' => $orderDetails
-                ];
-
-                \Illuminate\Support\Facades\Mail::send('emails.order', $messageData, function ($message) use ($email) { // Sending Mail: https://laravel.com/docs/9.x/mail#sending-mail    // 'emails.order' is the order.blade.php file inside the 'resources/views/emails' folder that will be sent as an email    // We pass in all the variables that order.blade.php will use    // https://www.php.net/manual/en/functions.anonymous.php
-                    $message->to($email)->subject('Order Placed - MultiVendorEcommerceApplication.com.eg');
-                });
-
-                /*
-                // Sending the Order confirmation SMS
-                // Send an SMS using an SMS API and cURL    
-                $message = 'Dear Customer, your order ' . $order_id . ' has been placed successfully with MultiVendorEcommerceApplication.com.eg. We will inform you once your order is shipped';
-                // $mobile = $data['mobile']; // the user's mobile that they entered while submitting the registration form
-                $mobile = Auth::user()->moblie; // Retrieving The Authenticated User: https://laravel.com/docs/9.x/authentication#retrieving-the-authenticated-user
-                \App\Models\Sms::sendSms($message, $mobile); // Send the SMS
-                */
 
 
                 // PayPal payment gateway integration in Laravel
