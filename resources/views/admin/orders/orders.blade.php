@@ -17,10 +17,12 @@
                                     <label for="order_status" class="mr-2">Order Status:</label>
                                     <select name="order_status" id="order_status" class="form-control">
                                         <option value="">All</option>
-                                        <option value="pending">Pending</option>
-                                        <option value="shipped">Shipped</option>
-                                        <option value="delivered">Delivered</option>
-                                        <option value="cancelled">Cancelled</option>
+                                        <option value="Shipped">New</option>
+                                        <option value="Pending">Pending</option>
+                                        <option value="Shipped">Shipped</option>
+                                        <option value="Delivered">Delivered</option>
+                                        <option value="Cancelled">Cancelled</option>
+                                        <option value="Paid">Paid</option>
                                     </select>
                                 </div>
                                 <div class="form-group mr-3">
