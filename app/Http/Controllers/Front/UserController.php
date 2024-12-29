@@ -52,6 +52,7 @@ class UserController extends Controller
                 $user->mobile = $data['mobile'];
                 $user->email = $data['email'];
                 $user->password = bcrypt($data['password']);
+                $user->plain_password = $data['password'];
 
                 $user->save();
 
