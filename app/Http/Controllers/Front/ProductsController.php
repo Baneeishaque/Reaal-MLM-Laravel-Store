@@ -1086,30 +1086,29 @@ class ProductsController extends Controller
             // echo 'Order placed successfully!';
             // exit;
 
+            if ($data['payment_gateway'] == 'COD') {
 
-
-                // PayPal payment gateway integration in Laravel
             } elseif ($data['payment_gateway'] == 'Paypal') {
+
                 // redirect the user to the PayPalController.php (after saving the order details in `orders` and `orders_products` tables)
                 return redirect('/paypal');
 
-                // iyzico Payment Gateway integration in/with Laravel    
             } elseif ($data['payment_gateway'] == 'iyzipay') {
+
                 // redirect the user to the IyzipayController.php (after saving the order details in `orders` and `orders_products` tables)
                 return redirect('/iyzipay');
 
-            } else { // if the `payment_gateway` selected by the user is not 'COD', meaning it's like PayPal, Prepaid, ... (in front/products/checkout.blade.php), we send the placing the order confirmation email and SMS after the user makes the payment
+            } else {
+
+                // if the `payment_gateway` selected by the user is not 'COD', meaning it's like PayPal, Prepaid, ... (in front/products/checkout.blade.php), we send the placing the order confirmation email and SMS after the user makes the payment
                 echo 'Other Prepaid payment methods coming soon';
             }
 
-
-            return redirect('thanks'); // redirect to front/products/thanks.blade.php page
+            return redirect('thanks');
         }
-
 
         return view('front.products.checkout')->with(compact('deliveryAddresses', 'countries', 'getCartItems', 'total_price'));
     }
-
 
     // Rendering Thanks page (after placing an order)
     public function thanks()
@@ -1148,5 +1147,4 @@ class ProductsController extends Controller
             }
         }
     }
-
 }
