@@ -165,9 +165,7 @@ $(document).ready(function () {
     });
 
 
-    // Show our Preloader/Loader/Loading Page/Preloading Screen while the placing order <form> is submitted using the    id="placeOrder"    HTML attribute in front/products/checkout.blade.php
     $(document).on('click', '#placeOrder', function () {
-        // Show our Preloader/Loader/Loading Page/Preloading Screen while the <form> is submitted    
         $('.loader').show();
     });
 

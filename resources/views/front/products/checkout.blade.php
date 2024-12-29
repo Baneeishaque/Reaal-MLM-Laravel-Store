@@ -49,8 +49,8 @@
 
 
 
-                                
-                                
+
+
                                 @include('front.products.delivery_addresses')
 
 
@@ -67,15 +67,15 @@
                                     @csrf {{-- Preventing CSRF Requests: https://laravel.com/docs/9.x/csrf#preventing-csrf-requests --}}
 
 
-                                    
-                                    
+
+
                                     @if (count($deliveryAddresses) > 0) {{-- Checking if there are any $deliveryAddreses for the currently authenticated/logged-in user --}} {{-- $deliveryAddresses variable is passed in from checkout() method in Front/ProductsController.php --}}
 
                                         <h4 class="section-h4">Delivery Addresses</h4>
 
                                         @foreach ($deliveryAddresses as $address)
                                             <div class="control-group" style="float: left; margin-right: 5px">
-                                                {{-- We'll use the Custom HTML data attributes:    shipping_charges    ,    total_price    ,    coupon_amount    ,    codpincodeCount    and    prepaidpincodeCount    to use them as handles for jQuery to change the calculations in "Your Order" section using jQuery. Check front/js/custom.js file --}}  
+                                                {{-- We'll use the Custom HTML data attributes:    shipping_charges    ,    total_price    ,    coupon_amount    ,    codpincodeCount    and    prepaidpincodeCount    to use them as handles for jQuery to change the calculations in "Your Order" section using jQuery. Check front/js/custom.js file --}}
                                                 <input type="radio" id="address{{ $address['id'] }}" name="address_id" value="{{ $address['id'] }}" shipping_charges="{{ $address['shipping_charges'] }}" total_price="{{ $total_price }}" coupon_amount="{{ \Illuminate\Support\Facades\Session::get('couponAmount') }}" codpincodeCount="{{ $address['codpincodeCount'] }}" prepaidpincodeCount="{{ $address['prepaidpincodeCount'] }}"> {{-- $total_price variable is passed in from checkout() method in Front/ProductsController.php --}} {{-- We created the Custom HTML Attribute id="address{{ $address['id'] }}" to get the UNIQUE ids of the addresses in order for the <label> HTML element to be able to point for that <input> --}}
                                             </div>
                                             <div>
@@ -87,7 +87,7 @@
                                             </div>
                                         @endforeach
                                         <br>
-                                    @endif 
+                                    @endif
 
 
                                     <h4 class="section-h4">Your Order</h4>
@@ -102,7 +102,7 @@
                                             <tbody>
 
 
-                                                
+
                                                 {{-- We'll place this $total_price inside the foreach loop to calculate the total price of all products in Cart. Check the end of the next foreach loop before @endforeach --}}
                                                 @php $total_price = 0 @endphp
 
@@ -129,7 +129,7 @@
                                                     </tr>
 
 
-                                                    
+
                                                     {{-- This is placed here INSIDE the foreach loop to calculate the total price of all products in Cart --}}
                                                     @php $total_price = $total_price + ($getDiscountAttributePrice['final_price'] * $item['quantity']) @endphp
                                                 @endforeach
@@ -159,7 +159,7 @@
                                                     </td>
                                                     <td>
                                                         <h6 class="order-h6">
-                                                            
+
                                                             @if (\Illuminate\Support\Facades\Session::has('couponAmount')) {{-- We stored the 'couponAmount' in a Session Variable inside the applyCoupon() method in Front/ProductsController.php --}}
                                                                 <span class="couponAmount">INR{{ \Illuminate\Support\Facades\Session::get('couponAmount') }}</span>
                                                             @else
@@ -205,7 +205,7 @@
                                                 <a href="terms-and-conditions.html" class="u-c-brand">terms & conditions</a>
                                             </label>
                                         </div>
-                                        <button type="submit" id="placeOrder" class="button button-outline-secondary">Place Order</button> {{-- Show our Preloader/Loader/Loading Page/Preloading Screen while the <form> is submitted using the    id="placeOrder"    HTML attribute. Check front/js/custom.js --}}
+                                        <button type="submit" id="placeOrder" class="button button-outline-secondary">Place Order</button>
                                     </div>
                                 </form>
 
