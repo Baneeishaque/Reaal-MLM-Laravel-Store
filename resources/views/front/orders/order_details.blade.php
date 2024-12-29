@@ -1,9 +1,4 @@
-{{-- This page is rendered by orders() method inside Front/OrderController.php (depending on if the order id Optional Parameter (slug) is passed in or not) --}}
-
-
 @extends('front.layout.layout')
-
-
 
 @section('content')
     <!-- Page Introduction Wrapper -->
@@ -64,7 +59,7 @@
                         </tr>
                     @endif
 
-                    
+
                     @if ($orderDetails['courier_name'] != '')
                         <tr>
                             <td>Courier Name</td>
@@ -100,7 +95,8 @@
                                     $getProductImage = \App\Models\Product::getProductImage($product['product_id']);
                                 @endphp
                                 <a target="_blank" href="{{ url('product/' . $product['product_id']) }}">
-                                    <img style="width: 80px" src="{{ asset('front/images/product_images/small/' . $getProductImage) }}">
+                                    <img style="width: 80px"
+                                         src="{{ asset('front/images/product_images/small/' . $getProductImage) }}">
                                 </a>
                             </td>
                             <td>{{ $product['product_code'] }}</td>
@@ -110,10 +106,11 @@
                             <td>{{ $product['product_qty'] }}</td>
                         </tr>
 
-                        
+
                         @if ($product['courier_name'] != '')
                             <tr>
-                                <td colspan="6">Courier Name: {{ $product['courier_name'] }}, Tracking Number: {{ $product['tracking_number'] }}</td>
+                                <td colspan="6">Courier Name: {{ $product['courier_name'] }}, Tracking
+                                    Number: {{ $product['tracking_number'] }}</td>
                             </tr>
                         @endif
 
