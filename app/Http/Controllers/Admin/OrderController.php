@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Auth;
 
+use App\Http\Controllers\Controller;
 use App\Models\User;
 use App\Models\Order;
 use App\Models\OrdersProduct;
@@ -14,34 +14,21 @@ use App\Models\OrdersLog;
 use App\Models\OrderStatus;
 use App\Models\OrderItemStatus;
 
-
 class OrderController extends Controller
 {
-    // Note: In the Admin Panel, in the Orders Management section, if the authenticated/logged-in user is 'vendor', we'll show the orders of the products added by/related to that 'vendor' ONLY, but if the authenticated/logged-in user is 'admin', we'll show ALL orders    
-
-
-    // Render admin/orders/orders.blade.php page (Orders Management section) in the Admin Panel
     public function orders(Request $request)
     {
-        // Correcting issues in the Skydash Admin Panel Sidebar using Session
         Session::put('page', 'orders');
 
-
-        // We determine the authenticated/logged-in user. If the authenticated/logged-in user is 'vendor', we show ONLY the orders of the products added by that specific 'vendor' ONLY, but if the authenticated/logged-in user is 'admin', we show ALL orders    
-        $adminType = Auth::guard('admin')->user()->type;      // `type`      is the column in `admins` table    // Accessing Specific Guard Instances: https://laravel.com/docs/9.x/authentication#accessing-specific-guard-instances    // Retrieving The Authenticated User and getting their `type`      column in `admins` table    
-        $vendor_id = Auth::guard('admin')->user()->vendor_id; // `vendor_id` is the column in `admins` table    // Accessing Specific Guard Instances: https://laravel.com/docs/9.x/authentication#accessing-specific-guard-instances    // Retrieving The Authenticated User and getting their `vendor_id` column in `admins` table    
-
-
-        if ($adminType == 'vendor') { // if the authenticated user (the logged in user) is 'vendor', check his `status`
-            $vendorStatus = Auth::guard('admin')->user()->status; // `status` is the column in `admins` table    // Accessing Specific Guard Instances: https://laravel.com/docs/9.x/authentication#accessing-specific-guard-instances    // Retrieving The Authenticated User and getting their `status` column in `admins` table    
-
-            if ($vendorStatus == 0) { // if the 'vendor' is inactive/disabled
-                return redirect('admin/update-vendor-details/personal')->with('error_message', 'Your Vendor Account is not approved yet. Please make sure to fill your valid personal, business and bank details.'); // the error_message will appear to the vendor in the route: 'admin/update-vendor-details/personal' which is the update_vendor_details.blade.php page
+        $adminType = Auth::guard('admin')->user()->type;
+        $vendor_id = Auth::guard('admin')->user()->vendor_id;
+        if ($adminType == 'vendor') {
+            $vendorStatus = Auth::guard('admin')->user()->status;
+            if ($vendorStatus == 0) {
+                return redirect('admin/update-vendor-details/personal')->with('error_message', 'Your Vendor Account is not approved yet. Please make sure to fill your valid personal, business and bank details.');
             }
         }
 
-
-        // If the authenticated/logged-in user is 'vendor', we show ONLY the orders of the products added by that specific 'vendor' ONLY
         if ($adminType == 'vendor') {
             $orders = Order::with([
                 'orders_products' => function ($query) use ($vendor_id) {
@@ -50,7 +37,6 @@ class OrderController extends Controller
             ])->orderBy('id', 'Desc');
             // dd($orders);
         } else {
-            // if the authenticated/logged-in user is 'admin', we show ALL orders
             $orders = Order::with('orders_products')->orderBy('id', 'Desc');
             // dd($orders);
         }
@@ -71,7 +57,7 @@ class OrderController extends Controller
         return view('admin.orders.orders')->with(compact('orders'));
     }
 
-    // Render admin/orders/order_details.blade.php (View Order Details page) when clicking on the View Order Details icon in admin/orders/orders.blade.php (Orders tab under Orders Management section in Admin Panel)    
+    // Render admin/orders/order_details.blade.php (View Order Details page) when clicking on the View Order Details icon in admin/orders/orders.blade.php (Orders tab under Orders Management section in Admin Panel)
     public function orderDetails($id)
     {
         // Correcting issues in the Skydash Admin Panel Sidebar using Session
