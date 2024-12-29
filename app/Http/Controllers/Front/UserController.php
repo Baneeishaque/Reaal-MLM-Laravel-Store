@@ -47,39 +47,21 @@ class UserController extends Controller
 
                 $user = new User;
 
-                $user->status   = 0; // 0 means that the user is inactive/disabled/deactivated. After they click on the link in the 'Confirmation Email' sent to them, they become active/enabled/activated i.e. `status` is one 1    
                 $user->name = $data['name'];
                 $user->mobile = $data['mobile'];
                 $user->email = $data['email'];
                 $user->password = bcrypt($data['password']);
                 $user->plain_password = $data['password'];
+                $user->status = 1;
 
                 $user->save();
 
                 $redirectTo = url('user/login-register');
 
-
-                // ACTIVATE USER AFTER SENDING A CONFIRMATION E-MAIL AND USER CLICKS ON LINK INSIDE THAT E-MAIL
-                $email = $data['email']; // the user's email that they entered while submitting the registration form
-
-                // The email message data/variables that will be passed in to the email view
-                $messageData = [
-                    'name'   => $data['name'],   // the user's name that they entered while submitting the registration form
-                    'email'  => $data['email'],  // the user's email that they entered while submitting the registration form
-                    'code'   => base64_encode($data['email']) // We base64 code the user's $email and send it as a Route Parameter from resources/views/emails/confirmation.blade.php to the 'user/confirm/{code}' route in web.php, then it gets base64 de-coded again in confirmUser() method in Front/UserController.php    // We will use the opposite: base64_decode() in the confirmUser() method to decode the encoded string (encode X decode)
-                ];
-                \Illuminate\Support\Facades\Mail::send('emails.confirmation', $messageData, function ($message) use ($email) { // Sending Mail: https://laravel.com/docs/9.x/mail#sending-mail    // 'emails.confirmation' is the resources/views/emails/confirmation.blade.php file that will be sent as an email    // We pass in all the variables that confirmation.blade.php will use    // https://www.php.net/manual/en/functions.anonymous.php
-                    $message->to($email)->subject('Confirm your Multi-vendor E-commerce Application Account');
-                });
-
-                // Redirect user back with a success message
-                $redirectTo = url('user/login-register'); // redirect user to the front/users/login_register.blade.php    // Check that route in web.php
-
-                // Here, we return a JSON response because the request is ORIGINALLY submitting an HTML <form> data using an AJAX request
-                return response()->json([ // JSON Responses: https://laravel.com/docs/9.x/responses#json-responses
-                    'type'    => 'success',
-                    'url'     => $redirectTo, // redirect user to the Cart cart.blade.php page
-                    'message' => 'Please confirm your email to activate your account!'
+                return response()->json([
+                    'type' => 'success',
+                    'url' => $redirectTo,
+                    'message' => 'Registration Successful. You can now login.'
                 ]);
 
                 /*
