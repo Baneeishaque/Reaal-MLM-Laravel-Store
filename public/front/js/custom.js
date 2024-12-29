@@ -209,8 +209,29 @@ $(document).ready(function () {
                     $('#register-success').html(resp.message);
                 }
             },
-            error: function () {
-                alert('Error');
+            error: function (xhr, status, error) {
+                // Construct detailed error message
+                var errorMsg = `
+        Error Occurred:
+        Status: ${xhr.status}
+        Status Text: ${xhr.statusText}
+        Error: ${error}
+        Response Text: ${xhr.responseText}
+        ReadyState: ${xhr.readyState}
+        `;
+
+                // Log the error details to the console for debugging
+                console.error("Error details:", {
+                    status: xhr.status,
+                    statusText: xhr.statusText,
+                    responseText: xhr.responseText,
+                    error: error,
+                    readyState: xhr.readyState,
+                    headers: xhr.getAllResponseHeaders()
+                });
+
+                // Show the detailed error message in an alert
+                alert(errorMsg);
             }
         });
     });
