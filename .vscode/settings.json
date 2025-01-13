@@ -10,6 +10,12 @@
         "SQLyog",
         "multivendor",
         "ecommerce",
-        "Distrib"
+        "Distrib",
+        "myreaal",
+        "Reaal",
+        "Laravel",
+        "letsencrypt",
+        "fullchain",
+        "privkey",
     ]
 }
